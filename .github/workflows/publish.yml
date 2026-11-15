@@ -1,0 +1,27 @@
+name: publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      targets:
+        description: Builds to publish (space separated, e.g. fabric-1.20.1 forge-1.20.1)
+        required: true
+      changelog:
+        description: Changelog
+        required: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: builds
+          path: jars
+      - name: Upload to Modrinth
+        working-directory: jars
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          CHANGELOG: ${{ inputs.changelog }}
+        run: python3 ../publish/publish.py ${{ inputs.targets }}
