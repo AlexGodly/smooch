@@ -21,8 +21,17 @@ jobs:
         with:
           name: smooch-jars
           path: build/libs/*.jar
-      - name: Release
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: softprops/action-gh-release@v2
-        with:
-          files: build/libs/smooch-*[0-9].jar
+      - name: Publish jars to the builds branch
+        if: github.ref == 'refs/heads/main'
+        run: |
+          mkdir -p /tmp/out && cp build/libs/*.jar /tmp/out/ && rm -f /tmp/out/*-sources.jar
+          git config user.name "Alex Godly"
+          git config user.email "AlexGodly@users.noreply.github.com"
+          git fetch origin builds || true
+          git switch --orphan builds-tmp
+          git rm -rfq . || true
+          git clean -fdxq
+          cp /tmp/out/*.jar .
+          git add *.jar
+          git commit -qm "Build ${GITHUB_SHA::7}"
+          git push -f origin HEAD:builds
