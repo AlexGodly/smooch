@@ -314,5 +314,59 @@
       "1.16.5"
     ],
     "name": "Fabric/Quilt 1.16.2-1.16.5"
+  },
+  "forge-1.19.4": {
+    "loaders": [
+      "forge"
+    ],
+    "game_versions": [
+      "1.19.3",
+      "1.19.4"
+    ],
+    "name": "Forge 1.19.3-1.19.4"
+  },
+  "forge-1.19.2": {
+    "loaders": [
+      "forge"
+    ],
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "name": "Forge 1.19-1.19.2"
+  },
+  "forge-1.18.2": {
+    "loaders": [
+      "forge"
+    ],
+    "game_versions": [
+      "1.18",
+      "1.18.1",
+      "1.18.2"
+    ],
+    "name": "Forge 1.18-1.18.2"
+  },
+  "forge-1.17.1": {
+    "loaders": [
+      "forge"
+    ],
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "name": "Forge 1.17-1.17.1"
+  },
+  "forge-1.16.5": {
+    "loaders": [
+      "forge"
+    ],
+    "game_versions": [
+      "1.16.2",
+      "1.16.3",
+      "1.16.4",
+      "1.16.5"
+    ],
+    "name": "Forge 1.16.2-1.16.5"
   }
 }

@@ -1,0 +1,54 @@
+plugins {
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
+}
+
+version = "${mod_version}+forge-${minecraft_version}"
+group = 'com.alexgodly'
+
+base {
+    archivesName = 'smooch'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+
+minecraft {
+    mappings channel: 'official', version: minecraft_version
+    copyIdeResources = true
+}
+
+sourceSets {
+    main {
+        java.srcDir '../common/v116'
+        resources.srcDir '../common/assets'
+    }
+}
+
+repositories {
+    maven { url = 'https://maven.shedaniel.me/' }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    compileOnly fg.deobf("me.shedaniel.cloth:cloth-config-forge:${cloth_config_version}")
+}
+
+processResources {
+    inputs.property 'version', mod_version
+    filesMatching('META-INF/mods.toml') {
+        expand 'version': mod_version
+    }
+}
+
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes(['Specification-Title': 'smooch', 'Specification-Vendor': 'Alex Godly',
+                    'Implementation-Title': 'Smooch', 'Implementation-Version': mod_version,
+                    'Implementation-Vendor': 'Alex Godly'])
+    }
+    finalizedBy 'reobfJar'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
