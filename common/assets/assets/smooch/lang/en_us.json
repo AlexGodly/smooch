@@ -25,5 +25,6 @@
   "config.smooch.cooldownMode.per_pair": "Per pair",
   "config.smooch.effect.enabled": "Enabled",
   "config.smooch.effect.seconds": "Duration (seconds)",
-  "config.smooch.effect.level": "Level"
+  "config.smooch.effect.level": "Level",
+  "key.category.smooch.main": "Smooch"
 }
