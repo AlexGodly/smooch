@@ -1,0 +1,28 @@
+{
+  "kiss": {
+    "subtitle": "subtitles.smooch.kiss",
+    "sounds": [
+      "smooch:kiss1",
+      "smooch:kiss2",
+      "smooch:kiss3",
+      "smooch:kiss4"
+    ]
+  },
+  "sparkle": {
+    "subtitle": "subtitles.smooch.sparkle",
+    "sounds": [
+      "smooch:sparkle1",
+      "smooch:sparkle2",
+      "smooch:sparkle3",
+      "smooch:sparkle4"
+    ]
+  },
+  "effects": {
+    "subtitle": "subtitles.smooch.effects",
+    "sounds": [
+      "smooch:effects1",
+      "smooch:effects2",
+      "smooch:effects3"
+    ]
+  }
+}
