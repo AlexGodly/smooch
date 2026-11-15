@@ -32,7 +32,7 @@ public class SmoochFabric implements ModInitializer {
                 server.execute(() -> KissHandler.onKeybind(player)));
 
         ServerTickEvents.END_SERVER_TICK.register(KissHandler::tick);
-        ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> KissHandler.forget(handler.getPlayer()));
+        ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> KissHandler.forget(handler.player));
         ServerLifecycleEvents.SERVER_STOPPED.register(server -> KissHandler.clear());
         ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resources, success) -> SmoochConfig.load());
     }
