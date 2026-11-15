@@ -15,7 +15,7 @@ public class SmoochFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         kissKey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
-                "key.smooch.kiss", InputConstants.Type.KEYBOARD, InputConstants.KEY_K, KeyMapping.Category.register(Smooch.id("main"))));
+                "key.smooch.kiss", InputConstants.Type.KEYSYM, 75 /* K */, KeyMapping.Category.register(Smooch.id("main"))));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (kissKey.consumeClick()) {

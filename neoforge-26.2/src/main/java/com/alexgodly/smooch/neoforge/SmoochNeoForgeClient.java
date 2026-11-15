@@ -20,7 +20,7 @@ import net.neoforged.neoforge.common.NeoForge;
 @Mod(value = Smooch.MOD_ID, dist = Dist.CLIENT)
 public class SmoochNeoForgeClient {
     static final KeyMapping.Category CATEGORY = new KeyMapping.Category(Smooch.id("main"));
-    static final KeyMapping KISS_KEY = new KeyMapping("key.smooch.kiss", InputConstants.Type.KEYBOARD, InputConstants.KEY_K, CATEGORY);
+    static final KeyMapping KISS_KEY = new KeyMapping("key.smooch.kiss", InputConstants.Type.KEYSYM, 75 /* K */, CATEGORY);
 
     public SmoochNeoForgeClient(IEventBus modBus, ModContainer container) {
         modBus.addListener(RegisterKeyMappingsEvent.class, event -> {
