@@ -18,6 +18,12 @@ jobs:
           - { dir: neoforge-1.21.1, java: 21 }
           - { dir: fabric-26.3, java: 25 }
           - { dir: neoforge-26.3, java: 25 }
+          - { dir: fabric-1.21.11, java: 21 }
+          - { dir: neoforge-1.21.11, java: 21 }
+          - { dir: fabric-26.1.2, java: 25 }
+          - { dir: neoforge-26.1.2, java: 25 }
+          - { dir: fabric-26.2, java: 25 }
+          - { dir: neoforge-26.2, java: 25 }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
