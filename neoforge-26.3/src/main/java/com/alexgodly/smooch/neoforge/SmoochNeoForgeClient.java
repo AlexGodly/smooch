@@ -16,12 +16,11 @@ import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import net.neoforged.neoforge.common.NeoForge;
-import org.lwjgl.glfw.GLFW;
 
 @Mod(value = Smooch.MOD_ID, dist = Dist.CLIENT)
 public class SmoochNeoForgeClient {
     static final KeyMapping.Category CATEGORY = new KeyMapping.Category(Smooch.id("main"));
-    static final KeyMapping KISS_KEY = new KeyMapping("key.smooch.kiss", InputConstants.Type.KEYBOARD, GLFW.GLFW_KEY_K, CATEGORY);
+    static final KeyMapping KISS_KEY = new KeyMapping("key.smooch.kiss", InputConstants.Type.KEYBOARD, InputConstants.KEY_K, CATEGORY);
 
     public SmoochNeoForgeClient(IEventBus modBus, ModContainer container) {
         modBus.addListener(RegisterKeyMappingsEvent.class, event -> {

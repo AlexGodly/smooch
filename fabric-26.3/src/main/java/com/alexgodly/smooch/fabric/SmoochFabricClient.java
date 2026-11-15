@@ -8,7 +8,6 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.KeyMapping;
-import org.lwjgl.glfw.GLFW;
 
 public class SmoochFabricClient implements ClientModInitializer {
     public static KeyMapping kissKey;
@@ -16,7 +15,7 @@ public class SmoochFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         kissKey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
-                "key.smooch.kiss", InputConstants.Type.KEYBOARD, GLFW.GLFW_KEY_K, KeyMapping.Category.register(Smooch.id("main"))));
+                "key.smooch.kiss", InputConstants.Type.KEYBOARD, InputConstants.KEY_K, KeyMapping.Category.register(Smooch.id("main"))));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (kissKey.consumeClick()) {
