@@ -37,7 +37,7 @@ public final class SmoochForge {
         SmoochConfig.init(FMLPaths.CONFIGDIR.get());
         Network.register();
 
-        TickEvent.ServerTickEvent.Post.BUS.addListener(event -> KissHandler.tick(event.server()));
+        TickEvent.ServerTickEvent.Post.BUS.addListener(event -> KissHandler.tick(event.getServer()));
         PlayerEvent.PlayerLoggedOutEvent.BUS.addListener(event -> {
             if (event.getEntity() instanceof ServerPlayer player) KissHandler.forget(player);
         });

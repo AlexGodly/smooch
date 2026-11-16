@@ -14,7 +14,7 @@ final class SmoochForgeClient {
     private SmoochForgeClient() {}
 
     static void init(FMLJavaModLoadingContext context) {
-        RegisterKeyMappingsEvent.BUS.addListener(event -> event.register(KISS_KEY));
+        RegisterKeyMappingsEvent.getBus(context.getModBusGroup()).addListener(event -> event.register(KISS_KEY));
         TickEvent.ClientTickEvent.Post.BUS.addListener(event -> onTick());
         ConfigHook.register();
     }
