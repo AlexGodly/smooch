@@ -1,0 +1,25 @@
+modLoader = "javafml"
+loaderVersion = "[@MAJOR@,)"
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "smooch"
+version = "${version}"
+displayName = "Smooch: Kiss Other Players"
+authors = "Alex Godly"
+logoFile = "assets/smooch/icon.png"
+description = '''Crouch or press K while looking at another player to kiss them. Hearts, kiss sounds and good effects for both of you.'''
+
+[[dependencies.smooch]]
+modId = "forge"
+mandatory = true
+versionRange = "[@MAJOR@,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.smooch]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[26.2,26.3)"
+ordering = "NONE"
+side = "BOTH"
