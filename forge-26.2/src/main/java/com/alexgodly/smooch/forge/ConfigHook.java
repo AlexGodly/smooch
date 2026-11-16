@@ -6,7 +6,7 @@ final class ConfigHook {
     private ConfigHook() {}
 
     static void register() {
-        if (!ModList.get().isLoaded("cloth_config")) return;
+        if (!ModList.isLoaded("cloth_config")) return;
         try {
             Class.forName("com.alexgodly.smooch.forge.ClothScreen").getMethod("register").invoke(null);
         } catch (ReflectiveOperationException ignored) {

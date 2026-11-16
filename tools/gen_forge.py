@@ -353,7 +353,7 @@ rootProject.name = 'smooch'
 '''
 
 
-def make(mc, *, style, common, java, rng, pack, fg='[7.0.3,8)', gradle='8.14.3', category='"key.categories.smooch"', obf=True):
+def make(mc, *, style, common, java, rng, pack, fg='[7.0.3,8)', gradle='9.5.0', category='"key.categories.smooch"', obf=True):
     d = os.path.join(ROOT, f'forge-{mc}')
     if os.path.exists(d):
         shutil.rmtree(d)
