@@ -9,6 +9,10 @@ on:
       changelog:
         description: Changelog
         required: false
+      version:
+        description: Mod version
+        required: false
+        default: "1.0.1"
 
 jobs:
   publish:
@@ -24,4 +28,5 @@ jobs:
         env:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
           CHANGELOG: ${{ inputs.changelog }}
+          MOD_VERSION: ${{ inputs.version }}
         run: python3 ../publish/publish.py ${{ inputs.targets }}
