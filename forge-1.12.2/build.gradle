@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'com.gtnewhorizons.retrofuturagradle' version '[1.4.0,1.5)'
+}
+
+version = "${mod_version}+forge-${minecraft_version}"
+group = 'com.alexgodly'
+
+base {
+    archivesName = 'smooch'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+        vendor = JvmVendorSpec.ADOPTIUM
+    }
+}
+
+minecraft {
+    mcVersion = '1.12.2'
+    mcpMappingChannel = 'stable'
+    mcpMappingVersion = '39'
+    username = 'Developer'
+}
+
+sourceSets {
+    main {
+        resources.srcDir '../common/assets'
+        resources.exclude 'assets/smooch/lang/en_us.json'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+processResources {
+    inputs.property 'version', mod_version
+    filesMatching('mcmod.info') {
+        expand 'version': mod_version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

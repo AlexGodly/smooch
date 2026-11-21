@@ -1,0 +1,14 @@
+[
+  {
+    "modid": "smooch",
+    "name": "Smooch: Kiss Other Players",
+    "description": "Crouch or press K while looking at another player to kiss them. Hearts, kiss sounds and good effects for both of you.",
+    "version": "${version}",
+    "mcversion": "1.12.2",
+    "url": "https://modrinth.com/mod/smooch",
+    "authorList": ["Alex Godly"],
+    "credits": "",
+    "logoFile": "assets/smooch/icon.png",
+    "dependencies": []
+  }
+]
