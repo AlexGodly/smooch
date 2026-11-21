@@ -51,7 +51,6 @@ tasks.named('jar', Jar).configure {
                     'Implementation-Title': 'Smooch', 'Implementation-Version': mod_version,
                     'Implementation-Vendor': 'Alex Godly'])
     }
-    finalizedBy 'reobfJar'
 }
 
 tasks.withType(JavaCompile).configureEach {
