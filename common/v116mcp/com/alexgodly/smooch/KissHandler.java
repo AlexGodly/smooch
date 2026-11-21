@@ -9,7 +9,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
-import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -60,13 +60,13 @@ public final class KissHandler {
     }
 
     static ServerPlayerEntity findTarget(ServerPlayerEntity player, double reach) {
-        Vector3d eye = player.getEyePosition(1.0F);
-        Vector3d look = player.getViewVector(1.0F);
+        Vec3d eye = player.getEyePosition(1.0F);
+        Vec3d look = player.getViewVector(1.0F);
         ServerPlayerEntity best = null;
         double bestDist = Double.MAX_VALUE;
         for (ServerPlayerEntity other : player.getLevel().players()) {
             if (other == player || other.isSpectator()) continue;
-            Vector3d toHead = other.getEyePosition(1.0F).subtract(eye);
+            Vec3d toHead = other.getEyePosition(1.0F).subtract(eye);
             double along = toHead.dot(look);
             if (along <= 0 || along > reach) continue;
             double off = toHead.subtract(look.scale(along)).length();
@@ -138,9 +138,9 @@ public final class KissHandler {
 
     private static void hearts(ServerPlayerEntity player, ServerPlayerEntity target) {
         ServerWorld level = player.getLevel();
-        Vector3d a = player.getEyePosition(1.0F);
-        Vector3d b = target.getEyePosition(1.0F);
-        Vector3d mid = a.add(b).scale(0.5);
+        Vec3d a = player.getEyePosition(1.0F);
+        Vec3d b = target.getEyePosition(1.0F);
+        Vec3d mid = a.add(b).scale(0.5);
         level.sendParticles(ParticleTypes.HEART, mid.x, mid.y + 0.3, mid.z, 3, 0.25, 0.2, 0.25, 0.0);
         level.sendParticles(ParticleTypes.HEART, b.x, b.y + 0.4, b.z, 1, 0.2, 0.1, 0.2, 0.0);
     }
