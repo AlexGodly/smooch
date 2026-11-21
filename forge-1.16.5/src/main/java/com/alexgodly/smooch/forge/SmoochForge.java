@@ -4,8 +4,8 @@ import com.alexgodly.smooch.ConfigScreens;
 import com.alexgodly.smooch.KissHandler;
 import com.alexgodly.smooch.Smooch;
 import com.alexgodly.smooch.SmoochConfig;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
@@ -63,7 +63,7 @@ public class SmoochForge {
 
     @SubscribeEvent
     public void onLogout(PlayerEvent.PlayerLoggedOutEvent event) {
-        if (event.getPlayer() instanceof ServerPlayer) KissHandler.forget((ServerPlayer) event.getPlayer());
+        if (event.getPlayer() instanceof ServerPlayerEntity) KissHandler.forget((ServerPlayerEntity) event.getPlayer());
     }
 
     @SubscribeEvent

@@ -2,8 +2,8 @@ package com.alexgodly.smooch.forge;
 
 import com.alexgodly.smooch.KissHandler;
 import com.alexgodly.smooch.Smooch;
-import net.minecraft.network.Connection;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraftforge.fml.network.NetworkDirection;
 import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
@@ -23,7 +23,7 @@ public final class Network {
                 .decoder(buf -> new Kiss())
                 .consumer((msg, ctx) -> {
                     ctx.get().enqueueWork(() -> {
-                        ServerPlayer player = ctx.get().getSender();
+                        ServerPlayerEntity player = ctx.get().getSender();
                         if (player != null) KissHandler.onKeybind(player);
                     });
                     ctx.get().setPacketHandled(true);
@@ -31,7 +31,7 @@ public final class Network {
                 .add();
     }
 
-    static boolean serverHasMod(Connection connection) {
+    static boolean serverHasMod(NetworkManager connection) {
         return CHANNEL.isRemotePresent(connection);
     }
 }

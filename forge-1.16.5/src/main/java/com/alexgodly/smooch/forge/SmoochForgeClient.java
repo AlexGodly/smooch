@@ -1,7 +1,7 @@
 package com.alexgodly.smooch.forge;
 
-import com.mojang.blaze3d.platform.InputConstants;
-import net.minecraft.client.KeyMapping;
+import net.minecraft.client.util.InputMappings;
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -11,7 +11,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import org.lwjgl.glfw.GLFW;
 
 final class SmoochForgeClient {
-    static final KeyMapping KISS_KEY = new KeyMapping("key.smooch.kiss", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_K, "key.categories.smooch");
+    static final KeyBinding KISS_KEY = new KeyBinding("key.smooch.kiss", InputMappings.Type.KEYSYM, GLFW.GLFW_KEY_K, "key.categories.smooch");
 
     private SmoochForgeClient() {}
 
