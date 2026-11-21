@@ -23,7 +23,7 @@ import net.minecraftforge.fml.server.ServerLifecycleHooks;
 
 @Mod(Smooch.MOD_ID)
 public class SmoochForge {
-    private static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Smooch.MOD_ID);
+    private static final DeferredRegister<SoundEvent> SOUNDS = new DeferredRegister<>(ForgeRegistries.SOUND_EVENTS, Smooch.MOD_ID);
     private static final RegistryObject<SoundEvent> KISS = sound("kiss");
     private static final RegistryObject<SoundEvent> SPARKLE = sound("sparkle");
     private static final RegistryObject<SoundEvent> EFFECTS = sound("effects");

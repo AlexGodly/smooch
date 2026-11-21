@@ -31,7 +31,8 @@ public final class Network {
                 .add();
     }
 
+    // Older Forge can't ask the server which channels it has; a server without the mod simply ignores the packet.
     static boolean serverHasMod(NetworkManager connection) {
-        return CHANNEL.isRemotePresent(connection);
+        return connection != null;
     }
 }
