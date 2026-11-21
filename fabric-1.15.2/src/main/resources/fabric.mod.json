@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "smooch",
+  "version": "${version}",
+  "name": "Smooch: Kiss Other Players",
+  "description": "Crouch or press K while looking at another player to kiss them. Hearts, kiss sounds and good effects for both of you.",
+  "authors": [
+    "Alex Godly"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/user/AlexGodly"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/smooch/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.alexgodly.smooch.fabric.SmoochFabric"
+    ],
+    "client": [
+      "com.alexgodly.smooch.fabric.SmoochFabricClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.12.0",
+    "minecraft": ">=1.15 <1.16",
+    "fabric-api": "*",
+    "java": ">=8"
+  }
+}

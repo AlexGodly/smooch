@@ -513,5 +513,29 @@
       "1.20.2"
     ],
     "name": "NeoForge 1.20.2"
+  },
+  "fabric-1.15.2": {
+    "loaders": [
+      "fabric"
+    ],
+    "game_versions": [
+      "1.15",
+      "1.15.1",
+      "1.15.2"
+    ],
+    "name": "Fabric 1.15.2"
+  },
+  "fabric-1.14.4": {
+    "loaders": [
+      "fabric"
+    ],
+    "game_versions": [
+      "1.14",
+      "1.14.1",
+      "1.14.2",
+      "1.14.3",
+      "1.14.4"
+    ],
+    "name": "Fabric 1.14.4"
   }
 }
