@@ -19,9 +19,6 @@
     ],
     "client": [
       "com.alexgodly.smooch.fabric.SmoochFabricClient"
-    ],
-    "modmenu": [
-      "com.alexgodly.smooch.fabric.ModMenuIntegration"
     ]
   },
   "depends": {
@@ -29,9 +26,5 @@
     "minecraft": ">=1.16 <1.16.2",
     "fabric-api": "*",
     "java": ">=8"
-  },
-  "suggests": {
-    "cloth-config": "*",
-    "modmenu": "*"
   }
 }

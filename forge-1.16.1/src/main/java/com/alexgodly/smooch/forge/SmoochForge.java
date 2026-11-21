@@ -1,6 +1,5 @@
 package com.alexgodly.smooch.forge;
 
-import com.alexgodly.smooch.ConfigScreens;
 import com.alexgodly.smooch.KissHandler;
 import com.alexgodly.smooch.Smooch;
 import com.alexgodly.smooch.SmoochConfig;
@@ -13,8 +12,6 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.event.server.FMLServerStoppedEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
@@ -22,7 +19,6 @@ import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.ExtensionPoint;
 import net.minecraftforge.fml.server.ServerLifecycleHooks;
 
 @Mod(Smooch.MOD_ID)
@@ -49,10 +45,6 @@ public class SmoochForge {
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
             SmoochForgeClient.init(modBus);
-            if (ModList.get().isLoaded("cloth_config")) {
-                ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.CONFIGGUIFACTORY,
-                        () -> (mc, parent) -> ConfigScreens.create(parent));
-            }
         }
     }
 

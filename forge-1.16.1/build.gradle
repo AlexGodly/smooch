@@ -19,8 +19,9 @@ minecraft {
 
 sourceSets {
     main {
-        java.srcDir '../common/v116mcp'
+        java.srcDir '../common/v116mcpo'
         resources.srcDir '../common/assets'
+        java.exclude '**/ConfigScreens.java'
     }
 }
 
@@ -30,7 +31,6 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    compileOnly fg.deobf("me.shedaniel.cloth:cloth-config-forge:${cloth_config_version}")
 }
 
 processResources {

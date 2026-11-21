@@ -13,6 +13,7 @@ sourceSets {
     main {
         java.srcDir '../common/v116'
         resources.srcDir '../common/assets'
+        java.exclude '**/ConfigScreens.java'
     }
 }
 
@@ -27,12 +28,6 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modCompileOnly("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
-        exclude group: 'net.fabricmc.fabric-api'
-    }
-    modCompileOnly("com.terraformersmc:modmenu:${project.modmenu_version}") {
-        transitive = false
-    }
 }
 
 processResources {
