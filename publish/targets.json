@@ -557,5 +557,24 @@
       "1.14.4"
     ],
     "name": "Forge 1.14.4"
+  },
+  "fabric-1.16.1": {
+    "loaders": [
+      "fabric"
+    ],
+    "game_versions": [
+      "1.16",
+      "1.16.1"
+    ],
+    "name": "Fabric 1.16-1.16.1"
+  },
+  "forge-1.16.1": {
+    "loaders": [
+      "forge"
+    ],
+    "game_versions": [
+      "1.16.1"
+    ],
+    "name": "Forge 1.16.1"
   }
 }
