@@ -87,7 +87,7 @@ jobs:
           merge-multiple: true
       - name: Push jars to the builds branch
         run: |
-          rm -f /tmp/jars/*-sources.jar /tmp/jars/*-slim.jar
+          rm -f /tmp/jars/*-sources.jar /tmp/jars/*-slim.jar /tmp/jars/*-dev.jar
           ls -la /tmp/jars
           git config user.name "Alex Godly"
           git config user.email "AlexGodly@users.noreply.github.com"
