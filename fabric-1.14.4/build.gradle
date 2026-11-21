@@ -11,7 +11,7 @@ base {
 
 sourceSets {
     main {
-        java.srcDir '../common/v116'
+        java.srcDir '../common/v114'
         resources.srcDir '../common/assets'
         java.exclude '**/ConfigScreens.java'
     }
