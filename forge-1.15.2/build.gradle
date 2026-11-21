@@ -19,7 +19,7 @@ minecraft {
 
 sourceSets {
     main {
-        java.srcDir '../common/v116mcp'
+        java.srcDir '../common/v116mcpo'
         resources.srcDir '../common/assets'
         java.exclude '**/ConfigScreens.java'
     }
